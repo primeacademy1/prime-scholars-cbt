@@ -1,41 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Prime Scholar CBT Practice</title>
+<title>Prime Scholar CBT</title>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getAuth,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyCj9k_qVRVlju9Yt2c88rdZCHenI8DNGt4",
+
+authDomain: "prime-scholar-cbt-pratice.firebaseapp.com",
+
+projectId: "prime-scholar-cbt-pratice",
+
+storageBucket: "prime-scholar-cbt-pratice.firebasestorage.app",
+
+messagingSenderId: "525160376952",
+
+appId: "1:525160376952:web:3ca5c69044ff867fa7db8d"
+
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+
+window.signup = function(){
+
+let email = document.getElementById("email").value;
+
+let password = document.getElementById("password").value;
+
+createUserWithEmailAndPassword(auth,email,password)
+
+.then(() => alert("Account created"))
+
+.catch(e => alert(e.message))
+
+}
+
+
+window.login = function(){
+
+let email = document.getElementById("email").value;
+
+let password = document.getElementById("password").value;
+
+signInWithEmailAndPassword(auth,email,password)
+
+.then(() => alert("Login successful"))
+
+.catch(e => alert(e.message))
+
+}
+
+</script>
 
 <style>
 
 body{
-font-family: Arial;
+
+font-family:arial;
+
 background:#f4f6f8;
+
 text-align:center;
+
 }
 
-.container{
+
+.box{
+
 background:white;
+
 width:400px;
+
 margin:auto;
+
 margin-top:100px;
+
 padding:20px;
+
 border-radius:10px;
-box-shadow:0px 0px 10px gray;
+
+}
+
+
+input,button{
+
+width:100%;
+
+padding:10px;
+
+margin-top:10px;
+
 }
 
 button{
-background:#2c7be5;
-color:white;
-border:none;
-padding:10px;
-margin-top:10px;
-width:100%;
-cursor:pointer;
-}
 
-input{
-width:100%;
-padding:10px;
-margin-top:10px;
+background:#007bff;
+
+color:white;
+
+border:none;
+
 }
 
 </style>
@@ -44,19 +124,32 @@ margin-top:10px;
 
 <body>
 
-<div class="container">
 
-<h2>Prime Scholar CBT Practice</h2>
+<div class="box">
 
-<input type="email" placeholder="Email">
+<h2>Prime Scholar CBT</h2>
 
-<input type="password" placeholder="Password">
+<input id="email" placeholder="Email">
 
-<button>Login</button>
+<input id="password" type="password" placeholder="Password">
 
-<button>Create Account</button>
+
+<button onclick="signup()">
+
+Create Account
+
+</button>
+
+
+<button onclick="login()">
+
+Login
+
+</button>
+
 
 </div>
+
 
 </body>
 
