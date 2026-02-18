@@ -193,19 +193,13 @@ opacity:0.7;
 </div>
 
 </header>
-  <div id="menuBox" style="display:none; position:absolute; right:20px; top:70px; background:#0e2a47; padding:20px; border-radius:10px;">
+<div id="menuBox" style="display:none; position:absolute; right:20px; top:70px; background:#0e2a47; padding:20px; border-radius:10px; width:200px;">
 
-<p onclick="alert('Dashboard')">Dashboard</p>
+<p onclick="takeExam()" style="cursor:pointer;">📝 Take Exam</p>
 
-<p onclick="alert('Start Exam')">Start Exam</p>
+<p onclick="support()" style="cursor:pointer;">💬 Support</p>
 
-<p onclick="alert('Result')">Result</p>
-
-<p onclick="alert('Profile')">Profile</p>
-
-<p onclick="alert('Settings')">Settings</p>
-
-<p onclick="alert('Logout')">Logout</p>
+<p onclick="about()" style="cursor:pointer;">ℹ️ About</p>
 
 </div>
 
@@ -374,6 +368,29 @@ password.value
 <script>
 
 function toggleMenu(){
+  <script>
+
+function takeExam(){
+
+alert("Please login or create account first")
+
+}
+
+
+function support(){
+
+window.location.href="https://chat.whatsapp.com/HygPu7T9DVc98FDHU0kdxn?mode=gi_t"
+
+}
+
+
+function about(){
+
+alert("About page coming soon")
+
+}
+
+</script>
 
 var box = document.getElementById("menuBox");
 
