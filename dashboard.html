@@ -146,7 +146,7 @@ background: rgba(0,200,150,0.2);
 
 font-size:40px;
 margin-bottom:15px;
-color:#00e6a8;
+color:#25D366;
 
 }
 
@@ -237,11 +237,11 @@ Stay consistent. Stay prepared. Stay ahead
 
 
 
-<div class="card" onclick="subjects()">
+<div class="card" onclick="supportAgents()">
 
-<i class="fas fa-book"></i>
+<i class="fab fa-whatsapp"></i>
 
-<p>Subjects</p>
+<p>Support</p>
 
 </div>
 
@@ -405,7 +405,47 @@ window.profile=function(){
 alert("Profile Page Coming Next");
 
 }
+window.supportAgents=function(){
 
+let choice = prompt(
+
+"PRIME SCHOLARS SUPPORT\n\n"+
+
+"1 — Agent 1\n"+
+
+"2 — Agent 2\n"+
+
+"3 — Agent 3\n\n"+
+
+"Enter 1, 2, or 3"
+
+)
+
+if(choice=="1"){
+
+window.open("https://wa.me/2349133091546")
+
+}
+
+else if(choice=="2"){
+
+window.open("https://wa.me/2349078898568")
+
+}
+
+else if(choice=="3"){
+
+window.open("https://wa.me/2349038085218")
+
+}
+
+else{
+
+alert("Invalid selection")
+
+}
+
+}
 
 
 /* STOP CAPTION AFTER 8 SECONDS */
