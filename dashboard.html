@@ -412,13 +412,57 @@ window.location.href="index.html";
 
 /* BUTTON FUNCTIONS */
 
-window.startExam=function(){
+window.startExam = function(){
 
-alert("Start Exam Page Coming Next");
+  const subjects = [
+    "English Language",
+    "Mathematics",
+    "Physics",
+    "Chemistry",
+    "Biology",
+    "Economics",
+    "Government",
+    "Literature in English",
+    "History",
+    "Geography",
+    "Accounting",
+    "CRS / IRS",
+    "Commerce"
+  ];
 
+  const container = document.getElementById("subjectsContainer");
+  container.innerHTML = ""; // clear previous content if any
+
+  subjects.forEach(subject => {
+    const card = document.createElement("div");
+    card.className = "subject-card";
+    card.innerHTML = `<p>${subject}</p>`;
+    card.onclick = () => startExamSubject(subject);
+    container.appendChild(card);
+  });
+
+  document.getElementById("subjectModal").style.display = "block";
+}
+  function closeSubjects(){
+  document.getElementById("subjectModal").style.display = "none";
 }
 
+function startExamSubject(subject){
+  document.getElementById("subjectModal").style.display = "none";
 
+  // Create animated caption for selected subject
+  const captionBox = document.createElement("div");
+  captionBox.className = "caption-box";
+  captionBox.innerHTML = `<div class="caption">You have selected: ${subject}. Exam will begin shortly...</div>`;
+  document.body.prepend(captionBox);
+
+  // Stop animation after 8 seconds
+  setTimeout(()=>{
+    document.querySelector(".caption").style.animation="none";
+  },8000);
+
+  // TODO: Trigger the exam page or questions fetching later
+}
 window.viewResults=function(){
 
 alert("Result Page Coming Next");
