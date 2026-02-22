@@ -1,0 +1,40 @@
+<h2>Select Your Department</h2>
+
+
+<div class="subject" onclick="selectSubject('Accounting')">
+📊 Accounting
+</div>
+
+
+<div class="subject" onclick="selectSubject('Finance')">
+💰 Finance
+</div>
+
+
+<div class="subject" onclick="selectSubject('Business Administration')">
+🏢 Business Administration
+</div>
+
+
+<div class="subject" onclick="selectSubject('Public Administration')">
+🏛 Public Administration
+</div>
+<script>
+
+function selectSubject(dept){
+
+localStorage.setItem("department", dept)
+
+document.getElementById("selectedSubject").innerText =
+"Department Selected: " + dept
+
+
+setTimeout(()=>{
+
+window.location.href="exam-questions.html"
+
+},3000)
+
+}
+
+</script>
